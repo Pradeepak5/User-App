@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+.landing-page-container{
+    width:500px;
+    border-radius: 10px;
+    height: 600px;
+    overflow-y: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.landing-page-container::-webkit-scrollbar{
+    width: 2px;
+    scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.landing-page-container::-webkit-scrollbar-thumb{
+    background-color: blue;
+    border-radius: 500px;
+}
+
+.landing-page-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:blue;
+    height: 100px;
+    margin: 0;
+    border-radius: 10px 10px 0px 0px;
+    position: sticky;
+    top: 0;
+}
+
+.landing-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-content{
+    display: flex;
+    justify-content: center;
+}
+
+.user-work-info{
+    width: 50%;
+    display: block;
+    padding: 0px 0px 0px 20px;
+}
+
+.user-work-info img{
+    margin-left: 30%;
+    margin-top: 20px;
+    width: 220px;
+    height:220px;
+    border-radius: 50%;
+}
+
+body {
+    font-family: Verdana, sans-serif;
   }
+
+.user-address{
+    width: 50%;
+    border-left: 1px solid rgb(0,0,0,.1);
+    padding: 15px 0px 0px 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.map-container{
+    margin-top: 10px;
+    width:550px;
+    height: 300px;
+    border-radius: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.map-container img{
+    width:100%;
+    height: 100%;
+    border-radius: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chatbox-container{
+    width: 260px;
+    height: 350px;
+    border: 1px solid blue;
+    border-radius: 15px 15px 0px 0px;
+    overflow-y: scroll;
+}
+
+.chatbox-container::-webkit-scrollbar{
+    width: 0;
+    scroll-behavior: smooth;
 }

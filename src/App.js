@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState} from 'react';
+import { LandingPage } from './LandingPage';
+import { ToDo } from './ToDo';
+import { Gallery } from './Gallery';
+import { Post } from './Post';
+import { Profile } from './Profile';
+
+
 
 function App() {
+    const [userData,setUserdata] = useState([]);
+
+    useEffect(()=>{
+      fetch(" https://panorbit.in/api/users.json")
+      .then(res=>res.json())
+      .then(data=>setUserdata(data.users))
+      .catch(err => console.log(err));
+    },[]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path='/' element={<LandingPage userData={userData}/>}/>
+        <Route path='/profile/:id' element={<Profile userData={userData} />} />
+        <Route path='/post/:id' element={<Post userData={userData} />}/>
+        <Route path='/gallery/:id' element={<Gallery userData={userData} />}/>
+        <Route path='/todo/:id' element={<ToDo userData={userData} />}/>
+      </Routes>      
   );
 }
 
